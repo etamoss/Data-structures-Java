@@ -9,7 +9,7 @@ public class QueueArrayDemo {
 
 
        q1.enqueue("j");
-        q1.enqueue("0");
+        q1.enqueue("o");
         q1.enqueue("e");
         q1.enqueue("l");
         q1.enqueue("k");
