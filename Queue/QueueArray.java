@@ -3,18 +3,18 @@ public class QueueArray implements Queue {
     private Object arr[];
     private int f;
     private int r;
-    public int size;
+    public int N;
 
     public QueueArray(int capacity){
         arr = new Object[capacity];
         f = 0;
         r = 0;
-        size = capacity;
+        N = capacity;
     }
 
     @Override
     public int size() {
-        return ((size-f+r)%size);
+        return ((N-f+r)%N);
     }
 
     @Override
@@ -22,14 +22,19 @@ public class QueueArray implements Queue {
         return (f==r);
     }
 
+     public boolean isFull(){
+      return (r==N) 
+    } 
+
     @Override
     public void enqueue(Object e) {
-        if(size() == (size-1)){
+        if(isFull()){
             System.out.println("The queue is full");
         }
         else
             arr[r] = e;
-            r = ((r+1)%size);
+            //r = ((r+1)%N);
+            r++;
     }
 
     @Override
@@ -41,8 +46,8 @@ public class QueueArray implements Queue {
         }
         else
             temp = arr[f];
-        arr[f]=null;
-            f = ((f+1)%size);
+            arr[f]=null;
+            f = ((f+1)%N);
         return temp;
     }
 
