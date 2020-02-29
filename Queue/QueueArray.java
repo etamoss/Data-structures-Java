@@ -21,8 +21,10 @@ public class QueueArray implements Queue {
       return (r==N) 
     } 
     @Override
-    public void enqueue(Object e) {
-        if(isFull()){
+    public void enqueue(Object e) 
+  {
+        if(isFull())
+        {
             System.out.println("The queue is full");
         }
         else
@@ -31,24 +33,29 @@ public class QueueArray implements Queue {
            r++;
     }
     @Override
-    public Object dequeue() {
+    public Object dequeue() 
+       {
         Object temp=null;
-        if(isEmpty()){
+        if(isEmpty())
+        {
             System.out.print("The Queue is empty");
         }
         else
             temp = arr[f];
             arr[f]=null;
-            f = ((f+1)%N);
+           f = ((f+1)%N);
         return temp;
     }
     @Override
-    public Object front() {
+    public Object front() 
+   {
         return arr[f];
     }
     @Override
-    public void display() {
-       for(int i = 0;i<f;i++){
+    public void display() 
+{
+       for(int i = 0;i<f;i++)
+	 {
            System.out.print(arr[i]+" ");
        }
     }
